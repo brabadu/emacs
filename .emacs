@@ -1,4 +1,4 @@
-(set-default-font "Consolas-11")
+;(set-default-font "Consolas-11")
 (add-to-list 'load-path "~/.emacs.d/")
 
 (global-font-lock-mode 1)
@@ -258,12 +258,12 @@
 ;(add-to-list 'auto-mode-alist '("\\.html$" . django-nxhtml-mumamo-mode))
 
 ;; Android
-(require 'android)
-(add-to-list 'load-path "~/.emacs.d/android-mode")
-(require 'android-mode)
+;(require 'android)
+;(add-to-list 'load-path "~/.emacs.d/android-mode")
+;(require 'android-mode)
 
-(custom-set-variables
- '(android-mode-sdk-dir "/opt/android"))
+;(custom-set-variables
+; '(android-mode-sdk-dir "/opt/android"))
 
 ;; File reloading
 (defun reload-file ()
