@@ -61,6 +61,7 @@
 (setq em-dir "~/.emacs.d")
 
 ;; TabBar
+(add-to-list 'load-path "~/.emacs.d/tabbar")
 (require 'tabbar)
 (set-face-attribute
  'tabbar-default nil
@@ -198,7 +199,7 @@
 ;(require 'sr-speedbar)
 ;(global-set-key (kbd "s-b") 'sr-speedbar-toggle)
 
-(add-to-list 'load-path "~/.emacs.d/Pymacs-0.23")
+(add-to-list 'load-path "~/.emacs.d/Pymacs-0.25")
 (require 'auto-complete)
 (global-auto-complete-mode t)
 (require 'virtualenv)
@@ -209,8 +210,8 @@
 ;(add-hook 'font-lock-mode-hook (lambda () (interactive) (column-marker-1 80)))
 
 ;; Jabber
-(require 'jabber)
-(global-set-key "\C-x\C-a" 'jabber-activity-switch-to)
+;(require 'jabber)
+;global-set-key "\C-x\C-a" 'jabber-activity-switch-to)
 
 ;; Default chromium browser
 (setq browse-url-generic-program (executable-find "chromium-browser")
@@ -291,7 +292,7 @@
 ;;; interfacing with ELPA, the package archive.
 ;;; Move this code earlier if you want to reference
 ;;; packages in your .emacs.
-(when
+'(when
     (load
      (expand-file-name "~/.emacs.d/elpa/package.el"))
   (package-initialize))
@@ -335,8 +336,8 @@
         (switch-to-buffer buffer)
         (jabber-libnotify-message (format "%s/%s" group nick) text)))))
 
-(add-to-list 'jabber-alert-message-hooks
+'(add-to-list 'jabber-alert-message-hooks
              'jabber-libnotify-message-display)
 
-(add-to-list 'jabber-alert-muc-hooks
+'(add-to-list 'jabber-alert-muc-hooks
              'jabber-libnotify-muc-display)
